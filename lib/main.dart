@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_application_1/screens/all_products/all_product.dart';
+import 'package:flutter_application_1/screens/base/base.dart';
 
 
 void main() async {
@@ -9,26 +11,27 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title:const  Text("This my app "),
-        ),
-        body: ListView.builder(itemCount: 5,  itemBuilder:((context,index){
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              child: Container(
-                height: 100,
-                color: Colors.green,
-                child: Text("page $index"),
-              ),
-            ),
-          );
-        }
-        )),
-      ),
+      home: BaseApp(),
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     title:const  Text("This my app "),
+      //   ),
+      //   body: ListView.builder(itemCount: 5,  itemBuilder:((context,index){
+      //     return Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: SizedBox(
+      //         child: Container(
+      //           height: 100,
+      //           color: Colors.green,
+      //           child: Text("page $index"),
+      //         ),
+      //       ),
+      //     );
+      //   }
+      //   )),
+      // ),
     );
   }
 }
