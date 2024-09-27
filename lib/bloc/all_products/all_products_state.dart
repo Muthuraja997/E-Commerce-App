@@ -4,7 +4,7 @@ import 'package:flutter_application_1/model/rating/product/product.dart';
 class AllProductsState extends Equatable {
   final List<Product> allproduct;
   final bool loading;
-  const AllProductsState({this.allproduct=const [], this.loading = false});
+  const AllProductsState({this.allproduct = const [], this.loading = false});
   AllProductsState copywith({List<Product>? allproduct, bool? loading}) {
     return AllProductsState(
         allproduct: allproduct ?? this.allproduct,
@@ -12,5 +12,5 @@ class AllProductsState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [allproduct,loading];
 }

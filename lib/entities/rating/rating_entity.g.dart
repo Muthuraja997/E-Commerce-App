@@ -8,7 +8,7 @@ part of 'rating_entity.dart';
 
 RatingEntity _$RatingEntityFromJson(Map<String, dynamic> json) => RatingEntity(
       rating: (json['rate'] as num).toDouble(),
-      count: (json['count'] as num).toInt(),
+      count: json['count'] as int,
     );
 
 Map<String, dynamic> _$RatingEntityToJson(RatingEntity instance) =>

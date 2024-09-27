@@ -14,13 +14,16 @@ class BaseApp extends StatefulWidget {
 class _BaseAppState extends State<BaseApp> {
   @override
   Widget build(BuildContext context) {
-    final allproductActions=AllProductActions();
+    final allproductAction = AllProductActions();
     return MultiRepositoryProvider(
         providers: [
-          RepositoryProvider(create: (_)=> allproductActions)
-        ],
-        child: MultiBlocProvider(providers: [
-          BlocProvider(create: (_)=>AllProductsBloc(productActions:allproductActions ))
-        ], child: const AllProduct()));
+          RepositoryProvider(create: (_) => allproductAction)
+          ],
+        child: MultiBlocProvider(
+          providers: [
+          BlocProvider(
+              create: (_) => AllProductsBloc(productActions: allproductAction))
+        ], 
+        child: const AllProduct()));
   }
 }

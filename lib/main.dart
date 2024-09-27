@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
     return  const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BaseApp(),
+    );
+  }
+}
+
       // home: Scaffold(
       //   appBar: AppBar(
       //     title:const  Text("This my app "),
@@ -32,6 +36,3 @@ class MyApp extends StatelessWidget {
       //   }
       //   )),
       // ),
-    );
-  }
-}

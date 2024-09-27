@@ -20,12 +20,27 @@ class Product extends Equatable {
       required this.productdescription,
       required this.productimage,
       required this.rating});
-  static Product fromEntity(ProductEntity ProductEntity){
-    return Product(productid: ProductEntity.productid, producttitle: ProductEntity.producttitle, productprice: ProductEntity.productprice, productdescription: ProductEntity.productdescription, productimage: ProductEntity.productimage, rating: ProductEntity.rating);
+  static Product fromEntity(ProductEntity productEntity) {
+    return Product(
+        productid: productEntity.productid,
+        producttitle: productEntity.producttitle,
+        productprice: productEntity.productprice,
+        productdescription: productEntity.productdescription,
+        productimage: productEntity.productimage,
+        rating: productEntity.rating);
   }
-  ProductEntity toEntity(){
-    return ProductEntity(productid: productid, producttitle: producttitle, productprice: productprice, productdescription: productdescription, productimage: productimage, rating: rating);
+
+  ProductEntity toEntity() {
+    return ProductEntity(
+        productid: productid,
+        producttitle: producttitle,
+        productprice: productprice,
+        productdescription: productdescription,
+        productimage: productimage,
+        rating: rating);
   }
+
   @override
-  List<Object?> get props => [productid,producttitle,productprice,productdescription,productimage];
+  List<Object?> get props =>
+      [productid, producttitle, productprice, productdescription, productimage];
 }
