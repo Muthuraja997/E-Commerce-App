@@ -7,14 +7,15 @@ import 'package:flutter_application_1/widgets/single_product.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AllProduct extends StatefulWidget {
-  const AllProduct({super.key});
+  final NavigatorState navigatorState;
+  const AllProduct({super.key,required this.navigatorState});
 
   @override
   State<AllProduct> createState() => _AllProductState();
 }
 
 class _AllProductState extends State<AllProduct> {
-  @override
+  // @override
 // void initState() {
 //   super.initState();
 //   BlocProvider.of<AllProductsBloc>(context).add(FetchAllproducts());
@@ -31,7 +32,11 @@ class _AllProductState extends State<AllProduct> {
     return ListView.builder(
         itemCount: product.length,
         itemBuilder: (BuildContext context, int index) {
-          return SingleProduct(product: product[index]);
+          return SingleProduct(
+            onTap:(){
+              widget.navigatorState.pushNamed('detailpage');
+            } ,
+            product: product[index]);
         });
   }
 
@@ -43,6 +48,7 @@ class _AllProductState extends State<AllProduct> {
           "E-commerce app",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        centerTitle: true,
       ),
       body: BlocBuilder<AllProductsBloc, AllProductsState>(
           builder: (context, state) {

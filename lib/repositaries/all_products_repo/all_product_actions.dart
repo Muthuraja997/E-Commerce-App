@@ -23,6 +23,7 @@ class AllProductActions extends AllProductRepository{
 // }
 
 
+  @override
   Future<List<Product>?> fetchAllproducts() async {
     final response= await http.get(Uri.parse('https://fakestoreapi.com/products'));
     if (response.statusCode==200){
