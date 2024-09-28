@@ -34,7 +34,12 @@ class _AllProductState extends State<AllProduct> {
         itemBuilder: (BuildContext context, int index) {
           return SingleProduct(
             onTap:(){
-              widget.navigatorState.pushNamed('detailpage');
+              widget.navigatorState.pushNamed
+              ('DetailPage',
+              arguments: {
+                'product':product[index]
+              },
+              );
             } ,
             product: product[index]);
         });

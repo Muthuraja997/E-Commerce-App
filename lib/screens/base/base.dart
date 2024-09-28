@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/bloc/all_products/all_products_bloc.dart';
+import 'package:flutter_application_1/model/rating/product/product.dart';
 import 'package:flutter_application_1/repositaries/all_products_repo/all_product_actions.dart';
 import 'package:flutter_application_1/screens/all_products/all_product.dart';
 import 'package:flutter_application_1/screens/detail_page/detail_page.dart';
@@ -16,13 +17,16 @@ class _BaseAppState extends State<BaseApp> {
   final GlobalKey<NavigatorState> navigatorkey = GlobalKey<NavigatorState>();
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     final rootNavigator=navigatorkey.currentState!;
+    final args =settings.arguments as Map<String,dynamic>? ?? {};
     Widget widget;
     switch (settings.name) {
       case '/':
         widget =  AllProduct(navigatorState:rootNavigator);
         break;
-      case 'detailpage':
-        widget = const DetailPage();
+      case 'DetailPage':
+        widget =  DetailPage(
+          product: args['product'] as Product,
+        );
         break;
       default:
         throw Exception("Invalid navication");

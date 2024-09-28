@@ -37,9 +37,7 @@ class _SingleProductState extends State<SingleProduct> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
       child: ListTile(
-        onTap: (){
-          widget.onTap;
-        },
+        onTap: widget.onTap,
         shape:BeveledRectangleBorder(
           side: 
           const BorderSide(color: Colors.grey,width:0.5),
